@@ -1,8 +1,15 @@
-
 const fs = require("fs");
 const filePath = "./data.json"
 
-
+const saveData = (data) => {
+    const stringifyData = JSON.stringify(data)
+    fs.writeFileSync(filePath, stringifyData)
+}
+// get list of data this function can be used as get all function
+const getEntryData = () => {
+    const jsonData = fs.readFileSync(filePath, "utf-8")
+    return JSON.parse(jsonData)    
+}
 class Entry {
     constructor(data) {
         this.id = data.id;
@@ -13,36 +20,33 @@ class Entry {
     }
     static get all() {
         try {
-              const jsonString = fs.readFileSync(filePath, "utf-8");
-              const entries = JSON.parse(jsonString);
-              console.log(entries);
+              const entries = getEntryData()
+            //   console.log(entries);
               return entries;
           } catch (err) {
               console.log(err);
           }
       
     }
+
     static findById(id) {
-    return Entry.all[id];
+    if(Entry.all[id]) {
+        return Entry.all[id];
+    } else {
+        return false
+    }
     }
 
     static create(entry) {
-      console.log("creating a new element");
-      const allEntries = Entry.all
-      const newEntryId = allEntries[allEntries.length - 1].id + 1;
-      const newEntry = new Entry({ id: newEntryId, ...entry});
-      console.log(1, newEntry);
-      allEntries.push(newEntry);
-      fs.writeFile(filePath, JSON.stringify(allEntries, null, 2), (err) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log("File successfully written!");
-                console.log(allEntries);
-            }
-        });
-      return allEntries;
+        const entries = getEntryData()
+        const newEntryId = entries[entries.length - 1].id + 1;
+        const newEntry = new Entry({ id: newEntryId, ...entry});
+        console.log(1, newEntry);
+        entries.push(newEntry);
+        saveData(entries)
+        return entries;
     }
+    
     // destroy() {
     //     const entry = data.filter((ent) => ent.id === this.id)[0];
     //     data.splice(data.indexOf(entry), 1);
