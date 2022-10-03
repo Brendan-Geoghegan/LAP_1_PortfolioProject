@@ -1,22 +1,13 @@
 const express = require("express");
 const app = express();
-<<<<<<< HEAD
-// const data = require("./database/data")
-=======
->>>>>>> taher
 const cors =  require("cors");
 app.use(cors());
-<<<<<<< HEAD
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-
-//  const env = require("dotenv");
 require('dotenv').config();
-=======
 const router = require('./Controllers/routes.js')
->>>>>>> taher
 
 app.get("/", (req, res) => {
     res.send("Hello");
