@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-// const data = require("./database/data")
 const cors =  require("cors");
 app.use(cors());
 
@@ -10,7 +9,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 
-//  const env = require("dotenv");
 require('dotenv').config();
 
 app.get("/", (req, res) => {
