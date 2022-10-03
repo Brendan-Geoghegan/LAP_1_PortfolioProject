@@ -1,7 +1,9 @@
-const express = require("express");
-const Entry = require("../Models/entries");
-const router = express.Router();
+const express = require("express")
+const router = express.Router()
+const Entry = require('../Models/entries')
 
+
+module.exports = router
 // function jsonReader(filePath, cb) {
 //     fs.readFile(filePath, (err, fileData) => {
 //         if (err) {
@@ -58,3 +60,4 @@ router.delete('/:id', (req, res) => {
 // router.post()
 
 module.exports = router;
+

@@ -1,3 +1,4 @@
+
 // const data =  require("../data.json");
 const fs = require("fs");
 const filePath = "./data.json";
