@@ -1,6 +1,6 @@
 const path = require("path")
 const fs = require("fs")
-const filePath = '../data.json"'
+const filePath = '../data.json'
 console.log(path);
 
 class Entry {
