@@ -18,6 +18,18 @@ router.get("/:id", (req,res) => {
     }
 })
 
+router.post('/', (req, res) => {
+    const data = req.body;
+    const newEntry = Entry.create(data);
+    res.status(201).send(newEntry);
+})
+router.delete('/:id', (req, res) => {
+    const entryId = parseInt(req.params.id);
+    const entryToDestroy = Entry.findById(entryId);
+    entryToDestroy.destroy();
+    res.status(204).send();
+})
+
 // router.post()
 
 module.exports = router;

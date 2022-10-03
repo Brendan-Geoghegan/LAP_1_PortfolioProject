@@ -4,6 +4,11 @@ const data = require("./database/data")
 const cors =  require("cors");
 const router = require("./Controllers/routes");
 app.use(cors());
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
+
 //  const env = require("dotenv");
 require('dotenv').config();
 

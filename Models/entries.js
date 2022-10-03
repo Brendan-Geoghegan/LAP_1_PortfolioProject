@@ -20,6 +20,16 @@ class Entry {
         const newEntry = new Entry(entry);
         return newEntry;
     }
+    static create(entry) {
+        const newEntryId = data.length + 1;
+        const newEntry = new Entry({ id: newEntryId, ...entry});
+        data.push(newEntry);
+        return newEntry;
+    }
+    destroy() {
+        const entry = data.filter((ent) => ent.id === this.id)[0];
+        data.splice(data.indexOf(entry), 1);
+    }
 }
 
 module.exports = Entry;
