@@ -1,4 +1,20 @@
-const data =  require("../database/data");
+const data =  require("../data.json");
+const fs = require("fs");
+
+function jsonReader(filePath, cb) {
+    fs.readFile(filePath, (err, fileData) => {
+        if (err) {
+        return cb && cb(err);
+        }
+        try {
+        const object = JSON.parse(fileData);
+        console.log(1, object,);
+        return cb && cb(null, object);
+        } catch (err) {
+        return cb && cb(err);
+        }
+    });
+}
 
 class Entry {
     constructor(data) {
@@ -9,9 +25,22 @@ class Entry {
         this.gif = data.gif;
     }
     static get all() {
-        const entries = data.map((entry) => new Entry(entry))
-        return entries;
+        console.log("hi");
+        jsonReader("./data.json", (err, entries) => {
+            if (err) {
+                console.log("err");
+                return;
+            } else {
+                console.log(entries);
+                console.log("entries");
+                return entries;
+            }
+        });
     }
+    // static get all() {
+    //     const entries = data.map((entry) => new Entry(entry))
+    //     return entries;
+    // }
     static findById(id){
         const entry = data.filter((ent) => ent.id == id)[0];
         if (!entry){
@@ -32,4 +61,4 @@ class Entry {
     }
 }
 
-module.exports = Entry;
+module.exports = {Entry, jsonReader};

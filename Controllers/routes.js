@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
     const entry = Entry.all;
+    console.log("router", entry);
     res.send(entry);
 })
 
