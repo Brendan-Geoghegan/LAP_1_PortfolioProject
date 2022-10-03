@@ -1,7 +1,8 @@
-const express = require("express");
-const Entry = require("../Models/entries");
-const router = express.Router();
+const express = require("express")
+const router = express.Router()
+const Entry = require('../Models/entries')
 
+<<<<<<< HEAD
 // function jsonReader(filePath, cb) {
 //     fs.readFile(filePath, (err, fileData) => {
 //         if (err) {
@@ -58,3 +59,14 @@ router.delete('/:id', (req, res) => {
 // router.post()
 
 module.exports = router;
+=======
+// obtain all data
+router.get("/", (req, res) => {
+  console.log("hitting main route for entries");
+  const entries = Entry.all
+  console.log(entries);
+  
+})
+
+module.exports = router
+>>>>>>> taher
