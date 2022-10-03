@@ -8,7 +8,18 @@ class Entry {
         this.reactions = data.reactions;
         this.gif = data.gif;
     }
-    
+    static get all() {
+        const entries = data.map((entry) => new Entry(entry))
+        return entries;
+    }
+    static findById(id){
+        const entry = data.filter((ent) => ent.id == id)[0];
+        if (!entry){
+            return;
+        }
+        const newEntry = new Entry(entry);
+        return newEntry;
+    }
 }
 
 module.exports = Entry;

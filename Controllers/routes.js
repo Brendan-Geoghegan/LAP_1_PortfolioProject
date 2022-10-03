@@ -7,5 +7,17 @@ router.get("/", (req, res) => {
     res.send(entry);
 })
 
+router.get("/:id", (req,res) => {
+    try {
+        const entryId = parseInt(req.params.id);
+        const selectedEntry = Entry.findById(entryId);
+        res.send(selectedEntry);
+    } catch (err) {
+        console.log(err);
+        res.status(404).send({message: err.message})
+    }
+})
 
-router.post()
+// router.post()
+
+module.exports = router;

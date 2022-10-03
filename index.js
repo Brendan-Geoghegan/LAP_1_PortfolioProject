@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const data = require("./database/data")
 const cors =  require("cors");
+const router = require("./Controllers/routes");
 app.use(cors());
 //  const env = require("dotenv");
 require('dotenv').config();
@@ -9,9 +10,13 @@ require('dotenv').config();
 app.get("/", (req, res) => {
     res.send("Hello");
 })
-app.get("/entries", (req, res) => {
-    res.send(data);
-})
+
+app.use("/entries", router);
+
+
+// app.get("/entries", (req, res) => {
+//     res.send(data);
+// })
 
 
 const port = process.env.PORT || 3000;
