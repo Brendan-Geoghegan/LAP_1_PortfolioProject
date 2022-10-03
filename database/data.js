@@ -44,3 +44,5 @@ const entries = [
         gif: ""
     }
 ]
+
+module.exports = entries;
