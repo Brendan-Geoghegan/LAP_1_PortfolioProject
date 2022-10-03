@@ -6,6 +6,8 @@ router.get("/", (req, res) => {
     const entry = Entry.all;
     res.send(entry);
 })
-
+// router.get('/:id', (req,res) => {
+//     res.end()
+// })
 
 router.post()
