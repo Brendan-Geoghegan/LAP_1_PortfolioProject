@@ -1,13 +1,14 @@
 const express = require("express");
 const app = express();
+const data = require("./database/data")
 //  const env = require("dotenv");
 require('dotenv').config();
 
 app.get("/", (req, res) => {
     res.send("Hello");
 })
-app.get("/test", (req, res) => {
-    res.send("test");
+app.get("/entries", (req, res) => {
+    res.send(data);
 })
 
 const port = process.env.PORT || 3000;
