@@ -1,6 +1,23 @@
+
 // const data =  require("../data.json");
 const fs = require("fs");
 const filePath = "./data.json";
+
+// function jsonReader(filePath, cb) {
+//     fs.readFile(filePath, (err, fileData) => {
+//         if (err) {
+//         return cb && cb(err);
+//         }
+//         try {
+//         const object = JSON.parse(fileData);
+//         // console.log(1, object,);
+//         return cb && cb(null, object);
+//         } catch (err) {
+//         return cb && cb(err);
+//         }
+//     });
+// }
+
 class Entry {
     constructor(data) {
         this.id = data.id;
