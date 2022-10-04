@@ -49,7 +49,7 @@ router.patch("/:id/reaction", (req, res) => {
 
 router.patch("/:id/gif", (req, res) => {
     const data =req.body;
-    const id = req.params.id;
+    const id = parseInt(req.params.id);
     const gif = data.gif;
     const updatedEntry = Entry.updateGif(id, gif);
     res.status(200).send(updatedEntry);
