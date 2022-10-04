@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/:id", (req,res) => {
-    const entry = Entry.findById(parseInt(req.params.id))
+    const entry = Entry.findById(parseInt(req.params.id));
     if(!entry) {
         res.send("item not found")
     } else {
