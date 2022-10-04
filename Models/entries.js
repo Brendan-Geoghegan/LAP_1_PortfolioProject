@@ -1,23 +1,17 @@
-
-// const data =  require("../data.json");
 const fs = require("fs");
-const filePath = "./data.json";
+const filePath = "./data.json"
 
-// function jsonReader(filePath, cb) {
-//     fs.readFile(filePath, (err, fileData) => {
-//         if (err) {
-//         return cb && cb(err);
-//         }
-//         try {
-//         const object = JSON.parse(fileData);
-//         // console.log(1, object,);
-//         return cb && cb(null, object);
-//         } catch (err) {
-//         return cb && cb(err);
-//         }
-//     });
-// }
-
+const saveData = (data) => {
+    const stringifyData = JSON.stringify(data, null, 2)
+    fs.writeFileSync(filePath, stringifyData)
+}
+// get list of data this function can be used as get all function
+const getEntryData = () => {
+    const jsonData = fs.readFileSync(filePath, "utf-8")
+    return JSON.parse(jsonData)    
+}
+// call the data as a global to be used in all functions
+const entries = getEntryData()
 class Entry {
     constructor(data) {
         this.id = data.id;
@@ -28,40 +22,32 @@ class Entry {
     }
     static get all() {
         try {
-              const jsonString = fs.readFileSync(filePath, "utf-8");
-              const entries = JSON.parse(jsonString);
-              console.log(entries);
+            //   const entries = getEntryData()
               return entries;
           } catch (err) {
               console.log(err);
           }
       
     }
+
     static findById(id) {
-    return Entry.all[id];
+        // const entries = getEntryData()
+        const entry = entries.filter(element => element.id == id)
+        if(entry.length == 0) {
+            return false
+        } else {
+            return entry;
+        }
     }
 
     static create(entry) {
-      console.log("creating a new element");
-      const allEntries = Entry.all
-      const newEntryId = allEntries[allEntries.length - 1].id + 1;
-      const newEntry = new Entry({ id: newEntryId, ...entry});
-      console.log(1, newEntry);
-      allEntries.push(newEntry);
-      fs.writeFile(filePath, JSON.stringify(allEntries, null, 2), (err) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log("File successfully written!");
-                console.log(allEntries);
-            }
-        });
-      return allEntries;
+        // const entries = getEntryData()
+        const newEntryId = entries[entries.length - 1].id + 1;
+        const newEntry = new Entry({ id: newEntryId, ...entry});
+        entries.push(newEntry);
+        saveData(entries)
+        return entries;
     }
-    // destroy() {
-    //     const entry = data.filter((ent) => ent.id === this.id)[0];
-    //     data.splice(data.indexOf(entry), 1);
-    // }
 }
 
-module.exports = Entry;
+module.exports = Entry
