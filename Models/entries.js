@@ -66,6 +66,13 @@ class Entry {
         saveData(entries);
         return entryToUpdate;
     }
+
+    static updateGif(entryId, gif) {
+        const entryToUpdate = entries[entryId];
+        entryToUpdate.gif[gif]
+        saveData(entries);
+        return entryToUpdate;
+    }
 }
 
 module.exports = Entry
