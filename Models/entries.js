@@ -49,6 +49,16 @@ class Entry {
         return entries;
     }
 
+    static addAcomment(id, text) {
+        console.log("add comment function");
+        console.log(id,"\n",text)
+        const entryToAddComment = entries.filter(eachEle => eachEle.id === id)
+        // console.log(entryToAddComment[0]);
+        // console.log(entryToAddComment[0].comments);
+        entryToAddComment[0].comments.push(text)
+        saveData(entries)
+        return entryToAddComment[0];
+        
     static updateReactions(entryId, reaction) {
         const entryToUpdate = entries[entryId];
         entryToUpdate.reactions[reaction] += 1;

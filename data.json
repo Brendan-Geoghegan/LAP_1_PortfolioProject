@@ -46,7 +46,12 @@
   {
     "id": 5,
     "entry": "Arya Stark",
-    "comments": [],
+    "comments": [
+      "hello",
+      "hello",
+      "new comment",
+      "new comment1"
+    ],
     "reactions": {
       "smiley": 1,
       "sad": 2,
