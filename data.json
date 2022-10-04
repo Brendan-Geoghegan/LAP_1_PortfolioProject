@@ -18,7 +18,7 @@
     "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
     "comments": [],
     "reactions": {
-      "smiley": 1208,
+      "smiley": 1209,
       "sad": 12,
       "like": 200
     },
@@ -28,6 +28,7 @@
     "id": 2,
     "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
     "comments": [
+      "smiley",
       "smiley",
       "smiley"
     ],
@@ -121,7 +122,7 @@
       "sad": 12,
       "like": 20
     },
-    "gif": ""
+    "gif": "gifURL"
   },
   {
     "id": 11,
@@ -134,6 +135,19 @@
       "sad": 13,
       "like": 20
     },
-    "gif": ""
+    "gif": "gifURL2"
+  },
+  {
+    "id": 12,
+    "entry": "test entry",
+    "comments": [
+      "new comment"
+    ],
+    "reactions": {
+      "smiley": 2,
+      "sad": 20,
+      "like": 5
+    },
+    "gif": "url"
   }
 ]

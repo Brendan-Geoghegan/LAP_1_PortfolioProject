@@ -68,8 +68,8 @@ class Entry {
     }
 
     static updateGif(entryId, gif) {
-        const entryToUpdate = entries[entryId];
-        entryToUpdate.gif[gif]
+        const entryToUpdate = entries.filter(eachEle => eachEle.id === entryId)[0];
+        entryToUpdate.gif = gif;
         saveData(entries);
         return entryToUpdate;
     }
