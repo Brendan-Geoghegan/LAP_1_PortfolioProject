@@ -59,7 +59,7 @@ class Entry {
         saveData(entries)
         return entryToAddComment[0];
     }
-        
+
     static updateReactions(entryId, reaction) {
         const entryToUpdate = entries[entryId];
         entryToUpdate.reactions[reaction] += 1;
