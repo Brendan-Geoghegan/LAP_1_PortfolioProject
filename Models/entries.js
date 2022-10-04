@@ -46,7 +46,7 @@ class Entry {
         const newEntry = new Entry({ id: newEntryId, ...entry});
         entries.push(newEntry);
         saveData(entries)
-        return entries;
+        return entries[entries.length-1];
     }
 
     static addAcomment(id, text) {

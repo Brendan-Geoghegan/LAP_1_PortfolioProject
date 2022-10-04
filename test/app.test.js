@@ -1,6 +1,12 @@
 const request = require('supertest');
 const app = require("../server.js");
-
+const fs = require("fs");
+const filePath = "./data.json"
+const getEntryData = () => {
+    const jsonData = fs.readFileSync(filePath, "utf-8")
+    return JSON.parse(jsonData)    
+}
+const entries = getEntryData()
 describe('API server', () => {
     let api;
 
@@ -25,7 +31,7 @@ describe('API server', () => {
 
     it('retrieves a specific entry', (done) => {
         request(api).get('/entries/0').expect(200)
-        .expect({
+        .expect([{
             id: 0,
             entry: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
             comments: [],
@@ -35,6 +41,23 @@ describe('API server', () => {
                 like: 200
             },
             gif: ""
-        }, done)
+        }], done)
+    })
+
+    it('it return status 201 to post request to /entries and return the new entry', (done) => {
+        const testEntry = {
+            "entry": "test entry",
+            "comments": ["new comment"],
+            "reactions": {
+              "smiley": 2,
+              "sad": 20,
+              "like": 5
+            },
+            "gif": "url"
+          }
+        request(api).post('/entries')
+                    .send(testEntry)
+                    .set('Accept', /application\/json/)
+                    .expect(201).expect({ ...testEntry, id: entries[entries.length - 1].id + 1}, done)
     })
 })
