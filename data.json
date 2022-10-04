@@ -8,7 +8,7 @@
     ],
     "reactions": {
       "smiley": 1202,
-      "sad": 15,
+      "sad": 17,
       "like": 200
     },
     "gif": ""
@@ -19,7 +19,7 @@
     "comments": [],
     "reactions": {
       "smiley": 1208,
-      "sad": 11,
+      "sad": 12,
       "like": 200
     },
     "gif": ""
@@ -117,7 +117,7 @@
     ],
     "reactions": {
       "smiley": 3,
-      "sad": 10,
+      "sad": 12,
       "like": 20
     },
     "gif": ""
@@ -130,7 +130,7 @@
     ],
     "reactions": {
       "smiley": 3,
-      "sad": 10,
+      "sad": 13,
       "like": 20
     },
     "gif": ""
