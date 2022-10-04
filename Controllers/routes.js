@@ -40,6 +40,14 @@ router.patch('/:id/comments', (req,res) => {
 })
 
 
+router.patch("/:id/reaction", (req, res) => {
+    const data =req.body;
+    const id = req.params.id;
+    const reaction = data.reaction;
+    const updatedEntry = Entry.updateReactions(id, reaction);
+    res.status(200).send(updatedEntry);
+})
+
 
 
 module.exports = router;
