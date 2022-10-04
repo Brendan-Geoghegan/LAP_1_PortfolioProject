@@ -48,11 +48,16 @@ router.patch("/:id/reaction", (req, res) => {
 })
 
 router.patch("/:id/gif", (req, res) => {
-    const data =req.body;
-    const id = parseInt(req.params.id);
-    const gif = data.gif;
-    const updatedEntry = Entry.updateGif(id, gif);
-    res.status(200).send(updatedEntry);
+    const entry = Entry.findById(parseInt(req.params.id));
+    if(!entry) {
+        res.send("item not found")
+    } else {
+        const data =req.body;
+        const id = parseInt(req.params.id);
+        const gif = data.gif;
+        const updatedEntry = Entry.updateGif(id, gif);
+        res.status(200).send(updatedEntry);
+    }
 })
 
 module.exports = router;

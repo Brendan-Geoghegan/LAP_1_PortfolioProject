@@ -14,13 +14,11 @@ describe('API server', () => {
         api = app.listen(5000, () => {
             console.log(`Example app listening on port 5000`)
         })
-
     })
 
     afterAll((done) => {
         console.log("gracefully stopping test server");
         api.close(done);
-
     })
 
     it('responds to get / with a status of 200 and says hello', (done) => {
@@ -85,7 +83,6 @@ describe('API server', () => {
                 gif: ""
             }, done)
     })
-
 
     let testComment = {
         comment: "smiley"
