@@ -4,8 +4,8 @@
     "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
     "comments": [],
     "reactions": {
-      "smiley": 1200,
-      "sad": 11,
+      "smiley": 1202,
+      "sad": 13,
       "like": 200
     },
     "gif": ""
@@ -46,7 +46,12 @@
   {
     "id": 5,
     "entry": "Arya Stark",
-    "comments": [],
+    "comments": [
+      "hello",
+      "hello",
+      "new comment",
+      "new comment1"
+    ],
     "reactions": {
       "smiley": 1,
       "sad": 2,

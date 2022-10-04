@@ -28,6 +28,24 @@ router.post('/', (req, res) => {
     const newEntry = Entry.create(data);
     res.status(201).send(newEntry);
 })
+// route to add comments
+router.patch('/:id/comments', (req,res) => {
+    console.log("add comments route");
+    const newComment = req.body.comment
+    console.log(newComment);
+    const entryId = parseInt(req.params.id)
+    const updatedEntry = Entry.addAcomment(entryId, newComment)
+    res.status(201).send(updatedEntry)
+})
+
+
+router.patch("/:id/reaction", (req, res) => {
+    const data =req.body;
+    const id = req.params.id;
+    const reaction = data.reaction;
+    const updatedEntry = Entry.updateReactions(id, reaction);
+    res.status(200).send(updatedEntry);
+})
 
 
 
