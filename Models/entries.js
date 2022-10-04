@@ -61,7 +61,7 @@ class Entry {
     }
 
     static updateReactions(entryId, reaction) {
-        const entryToUpdate = entries[entryId];
+        const entryToUpdate = entries.filter(eachEle => eachEle.id === entryId)[0];
         entryToUpdate.reactions[reaction] += 1;
         saveData(entries);
         return entryToUpdate;
