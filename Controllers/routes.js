@@ -12,7 +12,6 @@ router.get("/", (req, res) => {
     res.send(entries);
 })
 
-
 router.get("/:id", (req,res) => {
     const entry = Entry.findById(parseInt(req.params.id))
     if(!entry) {
@@ -29,6 +28,7 @@ router.post('/', (req, res) => {
     const newEntry = Entry.create(data);
     res.status(201).send(newEntry);
 })
+
 // route to add comments
 router.patch('/:id/comments', (req,res) => {
     console.log("add comments route");
@@ -39,7 +39,6 @@ router.patch('/:id/comments', (req,res) => {
     res.status(201).send(updatedEntry)
 })
 
-
 router.patch("/:id/reaction", (req, res) => {
     const data =req.body;
     const id = req.params.id;
@@ -48,7 +47,12 @@ router.patch("/:id/reaction", (req, res) => {
     res.status(200).send(updatedEntry);
 })
 
-
+router.patch("/:id/gif", (req, res) => {
+    const data =req.body;
+    const id = req.params.id;
+    const gif = data.gif;
+    const updatedEntry = Entry.updateGif(id, gif);
+    res.status(200).send(updatedEntry);
+})
 
 module.exports = router;
-
