@@ -71,8 +71,9 @@
     "comments": [],
     "reactions": {
       "smiley": 1,
-      "sad": 2,
-      "like": 12
+      "sad": 4,
+      "like": 12,
+      "undefined": 1
     },
     "gif": ""
   },
