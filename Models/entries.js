@@ -48,6 +48,13 @@ class Entry {
         saveData(entries)
         return entries;
     }
+
+    static updateReactions(entryId, reaction) {
+        const entryToUpdate = entries[entryId];
+        entryToUpdate.reactions[reaction] += 1;
+        saveData(entries);
+        return entryToUpdate;
+    }
 }
 
 module.exports = Entry
