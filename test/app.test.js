@@ -62,20 +62,6 @@ describe('API server', () => {
                     .send(testEntry)
                     .set('Accept', /application\/json/)
                     .expect(201).expect({ ...testEntry, id: entries[entries.length - 1].id + 1}, done)
-
-            "id": 0,
-            "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
-            "comments": [
-                null,
-                "sad"
-            ],
-            "reactions": {
-                "smiley": 1202,
-                "sad": 15,
-                "like": 200
-            },
-            "gif": ""
-        }], done)
     })
 
     let testReaction = {
