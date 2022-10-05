@@ -73,6 +73,18 @@ class Entry {
         saveData(entries);
         return entryToUpdate;
     }
+
+    static deleteEntry(id) {
+        const entriesAfterFilter = entries.filter(entry => entry.id !== id)
+        if(entries.length === entriesAfterFilter.length) {
+            return false
+        }else {
+            console.log(entriesAfterFilter);
+            saveData(entriesAfterFilter)
+            return entriesAfterFilter
+        }
+        
+    }
 }
 
 module.exports = Entry
