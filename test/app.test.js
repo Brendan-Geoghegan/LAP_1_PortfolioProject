@@ -90,7 +90,7 @@ describe('API server', () => {
             }, done)
     })
 
-    it.only("returns an error when trying to update an nonexistent entry's reaction count", (done) => {
+    it("returns an error when trying to update an nonexistent entry's reaction count", (done) => {
         request(api)
             .patch("/entries/-1/reaction")
             .send(testReaction)
@@ -143,5 +143,14 @@ describe('API server', () => {
                 "gif": "test"
             }, done)
     })
+
+    // delete route test
+    it.only('responds to delete /:id/delete with status 404', async () => {
+      console.log(entries);
+      await request(api).delete('/entries/3/delete').expect(404);
+      const newDbList = await request(api).get('/entries');
+      console.log(newDbList.body)
+      expect(newDbList.body.length).toBe(entries.length -1);
+  })
 
 })
