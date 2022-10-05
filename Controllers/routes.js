@@ -2,7 +2,6 @@ const express = require("express")
 const router = express.Router()
 const Entry = require('../Models/entries')
 
-module.exports = router
 
 // obtain all data
 router.get("/", (req, res) => {
