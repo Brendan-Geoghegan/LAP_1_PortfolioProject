@@ -68,10 +68,19 @@ class Entry {
     }
 
     static updateGif(entryId, gif) {
-        const entryToUpdate = entries.filter(eachEle => eachEle.id === entryId)[0];
-        entryToUpdate.gif = gif;
-        saveData(entries);
-        return entryToUpdate;
+        const entry = entries.filter(element => element.id == id)
+        if(entry.length == 0) {
+            return false
+        } else {
+            const entryToUpdate = entries.filter(eachEle => eachEle.id === entryId)[0];
+            entryToUpdate.gif = gif;
+            saveData(entries);
+            return entryToUpdate;
+        }
+        // const entryToUpdate = entries.filter(eachEle => eachEle.id === entryId)[0];
+        // entryToUpdate.gif = gif;
+        // saveData(entries);
+        // return entryToUpdate;
     }
 
     static deleteEntry(id) {
