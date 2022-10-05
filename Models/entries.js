@@ -91,6 +91,12 @@ class Entry {
         // }
         saveData(entries);
     }
+
+    static findReactionCountById(id, reaction) {
+        const entry = entries.filter(eachEle => eachEle.id === id)[0];
+        const reactionCount = entry.reactions[reaction];
+        return `${reactionCount}`;
+    }
 }
 
 module.exports = Entry

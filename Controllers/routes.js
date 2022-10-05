@@ -79,9 +79,31 @@ router.delete("/:id/delete", (req,res) => {
     res.status(404).send("entry deleted");
 })
 
+
 router.get("/:id/comments", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id))[0]
     console.log(entry.comments)
     res.send(entry.comments)
 })
+
+router.get("/count/:id/:reaction", (req, res) => {
+    const entry = Entry.findById(parseInt(req.params.id));
+    console.log(entry);
+    const reaction = req.params.reaction;
+    console.log(reaction);
+    if(!reaction) {
+        res.status(404).send("reaction not found")
+    } else if (!entry) {
+        res.status(404).send("id not found")
+    } else {
+        const id = parseInt(req.params.id);
+        console.log(id);
+        const reactionCount = Entry.findReactionCountById(id, reaction);
+        console.log(reactionCount);
+        res.send(reactionCount);
+    }
+})
+
+
+
 module.exports = router;

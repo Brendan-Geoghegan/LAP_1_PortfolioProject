@@ -126,7 +126,7 @@ describe('API server', () => {
         gif: "test"
     };
 
-    it("responds to a patch /:id/gif with a status code of 200", (done) => {
+    it.only("responds to a patch /:id/gif with a status code of 200", (done) => {
         request(api)
             .patch("/entries/3/gif")
             .send(testGif)
