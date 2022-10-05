@@ -81,8 +81,9 @@ class Entry {
         if(entries.length === entriesAfterFilter.length) {
             return false
         }else {
-            console.log(entriesAfterFilter);
+            // console.log(entriesAfterFilter);
             saveData(entriesAfterFilter)
+            console.log(entries);
             // return entriesAfterFilter
             return true;
         }
