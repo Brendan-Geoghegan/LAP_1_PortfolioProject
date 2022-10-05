@@ -76,18 +76,20 @@ class Entry {
 
     static deleteEntry(id) {
         console.log("delete function");
-        const entriesAfterFilter = entries.filter(entry => entry.id !== id)
-        console.log("array after delete \n", entriesAfterFilter);
-        if(entries.length === entriesAfterFilter.length) {
-            return false
-        }else {
-            // console.log(entriesAfterFilter);
-            saveData(entriesAfterFilter)
-            console.log(entries);
-            // return entriesAfterFilter
-            return true;
-        }
-        
+        const entryToDestroy = entries.filter((entry) => entry.id === id)[0];
+        entries.splice(entries.indexOf(entryToDestroy), 1)
+        // const entriesAfterFilter = entries.filter(entry => entry.id !== id)
+        // console.log("array after delete \n", entriesAfterFilter);
+        // if(entries.length === entriesAfterFilter.length) {
+        //     return false
+        // }else {
+        //     // console.log(entriesAfterFilter);
+        //     saveData(entriesAfterFilter)
+        //     console.log(entries);
+        //     // return entriesAfterFilter
+        //     return true;
+        // }
+        saveData(entries);
     }
 }
 

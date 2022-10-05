@@ -70,11 +70,12 @@ router.delete("/:id/delete", (req,res) => {
     // const entryToDelete = Entry.findById(id)[0]
     // console.log(entryToDelete)
     // entryToDelete.deleteEntry()
-    if(!Entry.deleteEntry(id)){
-        return res.send("entry doesn't existed")
-    } else {
-        res.status(200).send("Item deleted")
-    }
-    
+    // if(!Entry.deleteEntry(id)){
+    //     return res.send("entry doesn't existed")
+    // } else {
+    //     res.status(200).send("Item deleted")
+    // }
+    Entry.deleteEntry(id);
+    res.status(404).send("entry deleted");
 })
 module.exports = router;
