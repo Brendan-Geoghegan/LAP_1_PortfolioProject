@@ -83,7 +83,8 @@ class Entry {
         }else {
             console.log(entriesAfterFilter);
             saveData(entriesAfterFilter)
-            return entriesAfterFilter
+            // return entriesAfterFilter
+            return true;
         }
         
     }
