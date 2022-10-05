@@ -90,7 +90,7 @@ describe('API server', () => {
             }, done)
     })
 
-    it.only("returns an error when trying to update an nonexistent entry's reaction count", (done) => {
+    it("returns an error when trying to update an nonexistent entry's reaction count", (done) => {
         request(api)
             .patch("/entries/-1/reaction")
             .send(testReaction)
@@ -126,7 +126,7 @@ describe('API server', () => {
         gif: "test"
     };
 
-    it("responds to a patch /:id/gif with a status code of 200", (done) => {
+    it.only("responds to a patch /:id/gif with a status code of 200", (done) => {
         request(api)
             .patch("/entries/3/gif")
             .send(testGif)
