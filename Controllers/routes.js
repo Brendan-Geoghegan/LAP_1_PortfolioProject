@@ -2,8 +2,6 @@ const express = require("express")
 const router = express.Router()
 const Entry = require('../Models/entries')
 
-module.exports = router
-
 // obtain all data
 router.get("/", (req, res) => {
     console.log("hitting main route for entries");
@@ -15,7 +13,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req,res) => {
     const entry = Entry.findById(parseInt(req.params.id));
     if(!entry) {
-        res.send("item not found")
+        res.status(404).send("item not found")
     } else {
         res.send(entry);
     }
@@ -40,11 +38,18 @@ router.patch('/:id/comments', (req,res) => {
 })
 
 router.patch("/:id/reaction", (req, res) => {
+    const entry = Entry.findById(parseInt(req.params.id));
     const data =req.body;
-    const id = parseInt(req.params.id);
-    const reaction = data.reaction;
-    const updatedEntry = Entry.updateReactions(id, reaction);
-    res.status(200).send(updatedEntry);
+    if(!data) {
+        res.send("Data not received from client.")
+    } else if (!entry) {
+        res.send("id not found")
+    } else {
+        const id = parseInt(req.params.id);
+        const reaction = data.reaction;
+        const updatedEntry = Entry.updateReactions(id, reaction);
+        res.status(200).send(updatedEntry);
+    }
 })
 
 router.patch("/:id/gif", (req, res) => {
