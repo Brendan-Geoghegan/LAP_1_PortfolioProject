@@ -43,7 +43,7 @@ router.patch("/:id/reaction", (req, res) => {
     if(!data) {
         res.send("Data not received from client.")
     } else if (!entry) {
-        res.send("id not found")
+        res.status(404).send("id not found")
     } else {
         const id = parseInt(req.params.id);
         const reaction = data.reaction;

@@ -46,6 +46,11 @@ describe('API server', () => {
       }], done)
     })
 
+    it('returns an error when retrieving an nonexistant entry', (done) => {
+        request(api).get('/entries/-1').expect(404)
+        .expect("item not found", done)
+    })
+
     it('it return status 201 to post request to /entries and return the new entry', (done) => {
         const testEntry = {
             "entry": "test entry",
@@ -83,6 +88,14 @@ describe('API server', () => {
                 },
                 gif: ""
             }, done)
+    })
+
+    it.only("returns an error when trying to update an nonexistent entry's reaction count", (done) => {
+        request(api)
+            .patch("/entries/-1/reaction")
+            .send(testReaction)
+            .expect(404)
+            .expect("id not found", done)
     })
 
     let testComment = {
@@ -129,11 +142,6 @@ describe('API server', () => {
                 },
                 "gif": "test"
             }, done)
-    })
-
-    it.only('returns an error when retrieving an nonexistant entry', (done) => {
-        request(api).get('/entries/-1').expect(404)
-        .expect("item not found", done)
     })
 
 })
