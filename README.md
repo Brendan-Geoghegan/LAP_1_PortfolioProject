@@ -1,3 +1,5 @@
+![Team_Name_404](./media/team_name_404.gif"Team Name 404")
+
 # LAP_1_PortfolioProject
 Project for LAP1 by Team Name 404
 
