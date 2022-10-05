@@ -4,9 +4,9 @@ const Entry = require('../Models/entries')
 
 // obtain all data
 router.get("/", (req, res) => {
-    console.log("hitting main route for entries");
+    // console.log("hitting main route for entries");
     const entries = Entry.all
-    console.log(1, entries);
+    // console.log(1, entries);
     res.send(entries);
 })
 
@@ -65,6 +65,7 @@ router.patch("/:id/gif", (req, res) => {
     }
 })
 router.delete("/:id/delete", (req,res) => {
+    console.log("hitting the delete route");
     const id = parseInt(req.params.id);
     // const entryToDelete = Entry.findById(id)[0]
     // console.log(entryToDelete)
@@ -72,7 +73,7 @@ router.delete("/:id/delete", (req,res) => {
     if(!Entry.deleteEntry(id)){
         return res.send("entry doesn't existed")
     } else {
-        res.status(204)
+        res.status(200).send("Item deleted")
     }
     
 })

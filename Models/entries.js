@@ -75,7 +75,9 @@ class Entry {
     }
 
     static deleteEntry(id) {
+        console.log("delete function");
         const entriesAfterFilter = entries.filter(entry => entry.id !== id)
+        console.log("array after delete \n", entriesAfterFilter);
         if(entries.length === entriesAfterFilter.length) {
             return false
         }else {
