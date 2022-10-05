@@ -144,4 +144,13 @@ describe('API server', () => {
             }, done)
     })
 
+    // delete route test
+    it.only('responds to delete /:id/delete with status 404', async () => {
+      console.log(entries);
+      await request(api).delete('/entries/3/delete').expect(404);
+      const newDbList = await request(api).get('/entries');
+      console.log(newDbList.body)
+      expect(newDbList.body.length).toBe(entries.length -1);
+  })
+
 })

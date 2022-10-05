@@ -79,6 +79,13 @@ router.delete("/:id/delete", (req,res) => {
     res.status(404).send("entry deleted");
 })
 
+
+router.get("/:id/comments", (req, res) => {
+    const entry = Entry.findById(parseInt(req.params.id))[0]
+    console.log(entry.comments)
+    res.send(entry.comments)
+})
+
 router.get("/count/:id/:reaction", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id));
     console.log(entry);
