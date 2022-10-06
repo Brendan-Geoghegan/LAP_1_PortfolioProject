@@ -64,6 +64,7 @@ router.patch("/:id/gif", (req, res) => {
 })
 
 router.delete("/:id/delete", (req,res) => {
+    const id = parseInt(req.params.id);
     const entry = Entry.findById(parseInt(req.params.id));
     if(!entry) {
         res.status(404).send("item not found")
