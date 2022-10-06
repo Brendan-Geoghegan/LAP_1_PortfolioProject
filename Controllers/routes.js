@@ -1,12 +1,10 @@
 const express = require("express")
 const router = express.Router()
-const Entry = require('../Models/entries')
+const Entry = require('../models/entries')
 
 // obtain all data
 router.get("/", (req, res) => {
-    // console.log("hitting main route for entries");
     const entries = Entry.all
-    // console.log(1, entries);
     res.send(entries);
 })
 
@@ -20,26 +18,26 @@ router.get("/:id", (req,res) => {
 })
 
 router.post('/', (req, res) => {
-    console.log("create element route");
     const data = req.body;
-    console.log(data);
     const newEntry = Entry.create(data);
     res.status(201).send(newEntry);
 })
 
 // route to add comments
 router.patch('/:id/comments', (req,res) => {
-    console.log("add comments route");
     const newComment = req.body.comment
-    console.log(newComment);
     const entryId = parseInt(req.params.id)
-    const updatedEntry = Entry.addAcomment(entryId, newComment)
-    res.status(201).send(updatedEntry)
+    if(!entryId) {
+        res.status(404).send("item not found")
+    } else {
+        const updatedEntry = Entry.addAcomment(entryId, newComment)
+        res.status(201).send(updatedEntry)
+    }
 })
 
 router.patch("/:id/reaction", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id));
-    const data =req.body;
+    const data = req.body;
     if(!data) {
         res.send("Data not received from client.")
     } else if (!entry) {
@@ -55,7 +53,7 @@ router.patch("/:id/reaction", (req, res) => {
 router.patch("/:id/gif", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id));
     if(!entry) {
-        res.send("item not found")
+        res.status(404).send("item not found")
     } else {
         const data =req.body;
         const id = parseInt(req.params.id);
@@ -64,8 +62,8 @@ router.patch("/:id/gif", (req, res) => {
         res.status(200).send(updatedEntry);
     }
 })
+
 router.delete("/:id/delete", (req,res) => {
-    console.log("hitting the delete route");
     const id = parseInt(req.params.id);
     const entry = Entry.findById(parseInt(req.params.id));
     if(!entry) {
@@ -74,34 +72,29 @@ router.delete("/:id/delete", (req,res) => {
         Entry.deleteEntry(id);
         res.status(404).send("entry deleted");
     }
-    
 })
-
 
 router.get("/:id/comments", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id))[0]
-    console.log(entry.comments)
-    res.send(entry.comments)
+    if(!entry) {
+        res.status(404).send("item not found")
+    } else {
+        res.send(entry.comments)
+    }
 })
 
 router.get("/count/:id/:reaction", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id));
-    console.log(entry);
     const reaction = req.params.reaction;
-    console.log(reaction);
     if(!reaction) {
         res.status(404).send("reaction not found")
     } else if (!entry) {
         res.status(404).send("id not found")
     } else {
         const id = parseInt(req.params.id);
-        console.log(id);
         const reactionCount = Entry.findReactionCountById(id, reaction);
-        console.log(reactionCount);
         res.send(reactionCount);
     }
 })
-
-
 
 module.exports = router;

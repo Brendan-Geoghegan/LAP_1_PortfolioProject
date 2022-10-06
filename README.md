@@ -48,6 +48,7 @@ Project for LAP1 by Team Name 404 - serverside repo
 
 * Project Brief - https://gist.github.com/getfutureproof-admin/a2676ac7f31ea8b69fef40d50f4e25b6
 * Kanban - https://github.com/users/Brendan-Geoghegan/projects/1/views/1
-* Front End - https://github.com/Brendan-Geoghegan/LAP_1_PortfolioProject
-* Back End - https://github.com/Brendan-Geoghegan/LAP1_project_clientside
+* Netlify Frontend - https://team-name-404.netlify.app
 * Heroku Backend - https://team-name404.herokuapp.com
+* Frontend Repo - https://github.com/Brendan-Geoghegan/LAP_1_PortfolioProject
+* Backend Repo - https://github.com/Brendan-Geoghegan/LAP1_project_clientside
