@@ -5,11 +5,13 @@ const saveData = (data) => {
     const stringifyData = JSON.stringify(data, null, 2)
     fs.writeFileSync(filePath, stringifyData)
 }
+
 // get list of data this function can be used as get all function
 const getEntryData = () => {
     const jsonData = fs.readFileSync(filePath, "utf-8")
     return JSON.parse(jsonData)    
 }
+
 // call the data as a global to be used in all functions
 const entries = getEntryData()
 class Entry {
@@ -22,7 +24,6 @@ class Entry {
     }
     static get all() {
         try {
-            //   const entries = getEntryData()
               return entries;
           } catch (err) {
               console.log(err);
@@ -31,7 +32,6 @@ class Entry {
     }
 
     static findById(id) {
-        // const entries = getEntryData()
         const entry = entries.filter(element => element.id == id)
         if(entry.length == 0) {
             return false
@@ -41,7 +41,6 @@ class Entry {
     }
 
     static create(entry) {
-        // const entries = getEntryData()
         const newEntryId = entries[entries.length - 1].id + 1;
         const newEntry = new Entry({ id: newEntryId, ...entry});
         entries.push(newEntry);
@@ -53,8 +52,6 @@ class Entry {
         console.log("add comment function");
         console.log(id,"\n",text)
         const entryToAddComment = entries.filter(eachEle => eachEle.id === id)
-        // console.log(entryToAddComment[0]);
-        // console.log(entryToAddComment[0].comments);
         entryToAddComment[0].comments.push(text)
         saveData(entries)
         return entryToAddComment[0];
@@ -77,27 +74,12 @@ class Entry {
             saveData(entries);
             return entryToUpdate;
         }
-        // const entryToUpdate = entries.filter(eachEle => eachEle.id === entryId)[0];
-        // entryToUpdate.gif = gif;
-        // saveData(entries);
-        // return entryToUpdate;
     }
 
     static deleteEntry(id) {
         console.log("delete function");
         const entryToDestroy = entries.filter((entry) => entry.id === id)[0];
         entries.splice(entries.indexOf(entryToDestroy), 1)
-        // const entriesAfterFilter = entries.filter(entry => entry.id !== id)
-        // console.log("array after delete \n", entriesAfterFilter);
-        // if(entries.length === entriesAfterFilter.length) {
-        //     return false
-        // }else {
-        //     // console.log(entriesAfterFilter);
-        //     saveData(entriesAfterFilter)
-        //     console.log(entries);
-        //     // return entriesAfterFilter
-        //     return true;
-        // }
         saveData(entries);
     }
 

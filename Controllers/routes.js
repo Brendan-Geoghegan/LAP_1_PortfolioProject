@@ -4,9 +4,7 @@ const Entry = require('../Models/entries')
 
 // obtain all data
 router.get("/", (req, res) => {
-    // console.log("hitting main route for entries");
     const entries = Entry.all
-    // console.log(1, entries);
     res.send(entries);
 })
 
@@ -20,18 +18,14 @@ router.get("/:id", (req,res) => {
 })
 
 router.post('/', (req, res) => {
-    console.log("create element route");
     const data = req.body;
-    console.log(data);
     const newEntry = Entry.create(data);
     res.status(201).send(newEntry);
 })
 
 // route to add comments
 router.patch('/:id/comments', (req,res) => {
-    console.log("add comments route");
     const newComment = req.body.comment
-    console.log(newComment);
     const entryId = parseInt(req.params.id)
     const updatedEntry = Entry.addAcomment(entryId, newComment)
     res.status(201).send(updatedEntry)
@@ -67,14 +61,6 @@ router.patch("/:id/gif", (req, res) => {
 router.delete("/:id/delete", (req,res) => {
     console.log("hitting the delete route");
     const id = parseInt(req.params.id);
-    // const entryToDelete = Entry.findById(id)[0]
-    // console.log(entryToDelete)
-    // entryToDelete.deleteEntry()
-    // if(!Entry.deleteEntry(id)){
-    //     return res.send("entry doesn't existed")
-    // } else {
-    //     res.status(200).send("Item deleted")
-    // }
     Entry.deleteEntry(id);
     res.status(404).send("entry deleted");
 })
@@ -82,28 +68,22 @@ router.delete("/:id/delete", (req,res) => {
 
 router.get("/:id/comments", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id))[0]
-    console.log(entry.comments)
     res.send(entry.comments)
 })
 
 router.get("/count/:id/:reaction", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id));
-    console.log(entry);
     const reaction = req.params.reaction;
-    console.log(reaction);
+
     if(!reaction) {
         res.status(404).send("reaction not found")
     } else if (!entry) {
         res.status(404).send("id not found")
     } else {
         const id = parseInt(req.params.id);
-        console.log(id);
         const reactionCount = Entry.findReactionCountById(id, reaction);
-        console.log(reactionCount);
         res.send(reactionCount);
     }
 })
-
-
 
 module.exports = router;

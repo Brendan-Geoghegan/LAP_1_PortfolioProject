@@ -36,22 +36,11 @@
       "new comment"
     ],
     "reactions": {
-      "smiley": 3,
+      "smiley": 8,
       "sad": 20,
       "like": 5
     },
     "gif": "url"
-  },
-  {
-    "id": 3,
-    "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
-    "comments": [],
-    "reactions": {
-      "smiley": 1200,
-      "sad": 11,
-      "like": 200
-    },
-    "gif": "test"
   },
   {
     "id": 4,
