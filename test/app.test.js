@@ -45,7 +45,7 @@ describe("Get Requests", () => {
         request(api).get("/entries").expect(200, done)
     })
 
-    it.skip("Returns 200 status and the specified entry on get request to /entries/:id route", (done) => {
+    it("Returns 200 status and the specified entry on get request to /entries/:id route", (done) => {
         request(api).get("/entries/0").expect(200)
         .expect([{id: 0,
         entry: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
@@ -80,7 +80,7 @@ describe("Post Requests", () => {
         api.close(done);
     })
 
-    it("Returns 201 status on post request to /entries route, and returns the new entry'", (done) => {
+    it("Returns 201 status on post request to /entries route, and returns the new entry", (done) => {
         const testEntry = {
             "entry": "test entry",
             "comments": ["new comment"],
@@ -108,7 +108,7 @@ describe("Delete Requests", () => {
     let api;
 
     beforeAll(() => {
-        api = app.listen
+        api = app.listen(5000)
     })
 
     afterAll((done) => {
@@ -121,8 +121,8 @@ describe("Delete Requests", () => {
       expect(newDbList.body.length).toBe(entries.length -1);
     })
 
-    it.skip("Returns 404 status on delete request to /entries/:id/delete route where :id does not exist", async () => {
-        await request(api).delete("/entries/-1/delete").expect(404);
+    it.skip("Returns 404 status on delete request to /entries/:id/delete route where :id does not exist", (done) => {
+        request(api).delete("/-1/delete").expect(404);
       })
 
 })
@@ -144,7 +144,7 @@ describe("Comment Patch Requests", () => {
 
     it.skip("responds to a patch /:id/comments with a status code of 200", (done) => {
         request(api)
-            .patch("/entries/2/comments")
+            .patch("/2/comments")
             .send(testComment)
             .expect(201)
             .expect({
@@ -182,15 +182,9 @@ describe("Comment Patch Requests", () => {
             }, done)
     })
 
-    it.skip(" 4444 a patch /entries/:id/comments with a status code of 200", (done) => {
-        request(api)
-            .patch("/entries/-1/comments")
-            .expect(404)
-    })
-
-    it("Returns 500 status on get request to /entries/:id/comments route where :id does not exist", (done) => {
-        request(api).get("/entries/-1/comments").expect(500)
-        .expect(500, done)
+    it("Returns 404 status on get request to /entries/:id/comments route where :id does not exist", (done) => {
+        request(api).get("/-1/comments").expect(404)
+        .expect(404, done)
     })
 
 })
@@ -206,13 +200,13 @@ describe("Reaction Patch Requests", () => {
         api.close(done);
     })
 
-        let testReaction = {
+    let testReaction = {
         reaction: "smiley"
     };
 
-    it.skip("Returns 404 status on patch request to /:id/reaction route", (done) => {
+    it.skip("Returns 200 status on patch request to /:id/reaction route", (done) => {
         request(api)
-            .patch("/entries/1/reaction")
+            .patch("/1/reaction")
             .send(testReaction)
             .expect(200)
             .expect({
@@ -230,10 +224,9 @@ describe("Reaction Patch Requests", () => {
 
     it("Returns 404 status an error when trying to a patch request to a nonexistent entry's reaction count", (done) => {
         request(api)
-            .patch("/entries/-1/reaction")
+            .patch("/-1/reaction")
             .send(testReaction)
-            .expect(404)
-            .expect("id not found", done)
+            .expect(404, done)
     })
 
 })
@@ -255,11 +248,11 @@ describe("GIF Patch Requests", () => {
 
     it.skip("Returns 200 status to patch request to /:id/gif route", (done) => {
         request(api)
-            .patch("/entries/3/gif")
+            .patch("/0/gif")
             .send(testGif)
             .expect(200)
             .expect({
-                "id": 3,
+                "id": 4,
                 "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
                 "comments": [],
                 "reactions": {
@@ -269,6 +262,11 @@ describe("GIF Patch Requests", () => {
                 },
                 "gif": "test"
             }, done)
+    })
+
+    it("Returns 404 status on get request to /:id/gif route where :id does not exist", (done) => {
+        request(api).get("/-1/gif").expect(404)
+        .expect(404, done)
     })
 
 })
