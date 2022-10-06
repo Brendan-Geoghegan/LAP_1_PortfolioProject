@@ -2,26 +2,7 @@
   {
     "id": 0,
     "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
-    "comments": [
-      null,
-      "sad",
-      "",
-      "sfjadsjfgadsjfkdsfa",
-      "hjgjkghjgk",
-      "asfsd",
-      "hello",
-      "hello again",
-      "hello again",
-      "helloooo",
-      "hi",
-      "hii",
-      "test",
-      "test 2",
-      "test3",
-      "test3",
-      "test4",
-      "hjfh"
-    ],
+    "comments": [],
     "reactions": {
       "smiley": 1214,
       "sad": 21,
@@ -31,273 +12,176 @@
   },
   {
     "id": 1,
-    "entry": "test entry",
+    "entry": "Wow this webpage is amazing. Coming onto this website is the best thing that has ever happened to me. I am going to remember this on my deathbed",
     "comments": [
-      "new comment"
+      "Better than google tbh",
+      "Apple is definitely going to buy this for millions"
     ],
     "reactions": {
-      "smiley": 3,
-      "sad": 20,
-      "like": 5
+      "smiley": 1560,
+      "sad": 210,
+      "like": 35
     },
-    "gif": "url"
-  },
-  {
-    "id": 3,
-    "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
-    "comments": [],
-    "reactions": {
-      "smiley": 1200,
-      "sad": 11,
-      "like": 200
-    },
-    "gif": "test"
-  },
-  {
-    "id": 4,
-    "entry": "hii",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
+    "gif": "https://media2.giphy.com/media/U8NurcO5UCKejBl1v6/giphy.gif?cid=9af07ad3wch09ptvkqxqcuqyj56zhs1el6iwdup7iyxr7raa&rid=giphy.gif&ct=g"
   },
   {
     "id": 5,
-    "entry": "hello",
-    "comments": [],
+    "entry": "The dark mode/light mode button is really cool. I never could have implemented something so intricate and amazingly detailed myself. Whatever team of people made this must all be full of super experienced developers!",
+    "comments": [
+      "Its beautiful",
+      "It is beautiful, i agree"
+    ],
     "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "smiley": 9560,
+      "sad": 2,
+      "like": 3000
     },
-    "gif": "https://media4.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif?cid=9af07ad3ir1lq8ybyer4hhilbpvy63kzeg98y2haognig5gj&rid=giphy.gif&ct=g"
+    "gif": "https://media2.giphy.com/media/quEsMOrr3hmQ8/giphy.gif?cid=9af07ad3qx20lf52kwttcelntnsygc2qe57auevn6i54zv40&rid=giphy.gif&ct=g"
   },
   {
     "id": 6,
-    "entry": "ghfgfh",
+    "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissi",
     "comments": [],
     "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "smiley": 24,
+      "sad": 49,
+      "like": 67
     },
-    "gif": ""
-  },
-  {
-    "id": 7,
-    "entry": "agafdgsdfgs",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
+    "gif": "https://media1.giphy.com/media/wAxlCmeX1ri1y/giphy.gif?cid=9af07ad30g2fsjyuytcr5rhn0ekrq5headljqchjd2kpdibt&rid=giphy.gif&ct=g"
   },
   {
     "id": 8,
-    "entry": "fgsdfgsdfgsdfgsdf",
+    "entry": "Just found out that 30% of Dalmatians are deaf in one ear?",
     "comments": [],
     "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "smiley": 1,
+      "sad": 2000,
+      "like": 2
     },
-    "gif": ""
-  },
-  {
-    "id": 9,
-    "entry": "fgsdfgsdfgsdfgsdf",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
-  },
-  {
-    "id": 10,
-    "entry": "drgsdfgsfg",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
+    "gif": "https://media4.giphy.com/media/znqimOYUrAsoM/giphy.gif?cid=9af07ad3qqc06sxz3nr49w44am3jxfenjiwen1yig19vv0bz&rid=giphy.gif&ct=g"
   },
   {
     "id": 11,
-    "entry": "sefasdfasdf",
-    "comments": [],
+    "entry": "This is a post without a gif. Super interesting post right here, very engaging text, yes very engaging. You are engaged in this post. There is not going to be anything interesting here so you should probably stop reading. This is a post without a gif",
+    "comments": [
+      "Super engaging post!"
+    ],
     "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "smiley": 400,
+      "sad": 600,
+      "like": 450
     },
     "gif": ""
-  },
-  {
-    "id": 12,
-    "entry": "ADASFASDFASDF",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": "https://media4.giphy.com/media/brsEO1JayBVja/giphy.gif?cid=9af07ad3cmldjuekzodfzv569tba1mvpv8h7qg3jbwuriqxi&rid=giphy.gif&ct=g"
   },
   {
     "id": 13,
-    "entry": "sdfasdf",
-    "comments": [],
+    "entry": "We're no strangers to love\nYou know the rules and so do I (do I)\nA full commitment's what I'm thinking of\nYou wouldn't get this from any other guy\nI just wanna tell you how I'm feeling\nGotta make you understand\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\n",
+    "comments": [
+      "Never gonna make you cry\nNever gonna say goodbye\nNever gonna tell a lie and hurt you\nWe've known each other for so long",
+      "Your heart's been aching, but you're too shy to say it (say it)\nInside, we both know what's been going on (going on)\nWe know the game and we're gonna play it",
+      "And if you ask me how I'm feeling\nDon't tell me you're too blind to see\nNever gonna give you up",
+      "Never gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye",
+      "Never gonna tell a lie and hurt you\nNever gonna give you up\nNever gonna let you down\nNever gonna run around and desert you\nNever gonna make you cry\nNever gonna say goodbye",
+      "Never gonna tell a lie and hurt you\nWe've known each other for so long",
+      "Your heart's been aching, but you're too shy to say it (to say it)\nInside, we both know what's been going on (going on)\nWe know the game and we're gonna play it",
+      "And if you ask me how I'm feeling"
+    ],
     "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "smiley": 256,
+      "sad": 224,
+      "like": 225
     },
-    "gif": ""
-  },
-  {
-    "id": 14,
-    "entry": "sdfdsf",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
-  },
-  {
-    "id": 15,
-    "entry": "sdfas",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
+    "gif": "https://media1.giphy.com/media/fRB9j0KCRe0KY/giphy.gif?cid=9af07ad3evcnyzyw1eqpmos9si5h24foer21oo7t1bqoldff&rid=giphy.gif&ct=g"
   },
   {
     "id": 16,
-    "entry": "asfdsa",
-    "comments": [],
+    "entry": "The IPCC report estimates that global surface temperatures are now 1.07C warmer than they were between 1850-1900. Since 1970, global surface temperatures have risen faster than in any 50-year-period over the last 2,000 years and this has been particularly pronounced in recent years.",
+    "comments": [
+      "That fills me with hope :/ ",
+      "Global warming isn't real! sheep"
+    ],
     "reactions": {
       "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "sad": 855,
+      "like": 870
     },
-    "gif": ""
+    "gif": "https://media2.giphy.com/media/mf8UbIDew7e8g/giphy.gif?cid=9af07ad3sh33e9rbpbg6zinpvp28lam77oglzqfjf0sk2wsd&rid=giphy.gif&ct=g"
   },
   {
     "id": 17,
-    "entry": "fadsfasf",
-    "comments": [],
+    "entry": "THE EARTH IS FLAT! ",
+    "comments": [
+      "I can see the truth!!!!!!",
+      "You're an idiot"
+    ],
     "reactions": {
       "smiley": 0,
-      "sad": 0,
+      "sad": 3200,
       "like": 0
     },
-    "gif": ""
-  },
-  {
-    "id": 18,
-    "entry": "gsdfgs",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
+    "gif": "https://media1.giphy.com/media/hVmMHduVkQVQKu3fU5/giphy.gif?cid=9af07ad3tmtzplxrkzqsfb5529uae6z919ds0k4a1dxdjeik&rid=giphy.gif&ct=g"
   },
   {
     "id": 19,
-    "entry": "vzxcz",
-    "comments": [],
+    "entry": "Ada Lovelace, born in the year 1815, was the world’s first programmer. She started to work on the analytical engine in the early 18th century. She has developed the first computer program, a century before the first computer was created.",
+    "comments": [
+      "Cool fact!"
+    ],
     "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "smiley": 852,
+      "sad": 45,
+      "like": 900
     },
-    "gif": ""
-  },
-  {
-    "id": 20,
-    "entry": "adasf",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
-  },
-  {
-    "id": 21,
-    "entry": "dsgdfg",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
+    "gif": "https://media0.giphy.com/media/HscDLzkO8EOTmgkhQP/giphy.gif?cid=9af07ad3dxae255a8x38br8y4k1w7059b8hoq97zg4555svn&rid=giphy.gif&ct=g"
   },
   {
     "id": 22,
-    "entry": "sadfasdf",
-    "comments": [],
+    "entry": "I think \"LAP_1_PortfolioProject\" was a really good group name. Super creative. You guys should have stuck with it!",
+    "comments": [
+      "I agree, it was a top tier group name!",
+      "It was so creative!!! So sad they went with this instead",
+      "I dont understand how they came up with it????",
+      "I am going to name my first born child LAP_1_PortfolioProject"
+    ],
     "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "smiley": 545,
+      "sad": 55,
+      "like": 620
     },
-    "gif": ""
+    "gif": "https://media0.giphy.com/media/xTiN0L7EW5trfOvEk0/giphy.gif?cid=9af07ad3k66sx6l6kojyvtde661lxledyrye2npkcb0onnro&rid=giphy.gif&ct=g"
   },
   {
     "id": 23,
-    "entry": "yty",
-    "comments": [],
+    "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissim",
+    "comments": [
+      "lorem ipsum indeed"
+    ],
     "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "smiley": 21,
+      "sad": 12,
+      "like": 6
     },
     "gif": ""
   },
   {
     "id": 24,
-    "entry": "cccc",
-    "comments": [],
+    "entry": "\nRenuntiatio IPCC aestimat temperaturas globalis superficies iam 1.07C calidiores esse quam inter 1850-1900 essent. Ab anno 1970, superficies globalis temperaturae velocius surrexerunt quam quolibet 50 annorum tempore per ultimos 2,000 annos et hoc in his annis peculiariter pronuntiatum est.",
+    "comments": [
+      "I can't speak latin :(",
+      "\nHoc genus in non enim translate",
+      "This guy above cant understand latin... smh",
+      "I can speak latin"
+    ],
     "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
+      "smiley": 573,
+      "sad": 259,
+      "like": 491
     },
     "gif": ""
   },
   {
     "id": 25,
-    "entry": "ddd",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 1
-    },
-    "gif": ""
-  },
-  {
-    "id": 26,
-    "entry": "sadfasf",
+    "entry": "This is an example post without a gif",
     "comments": [],
     "reactions": {
       "smiley": 1,
@@ -307,36 +191,16 @@
     "gif": ""
   },
   {
-    "id": 27,
-    "entry": "new funct",
-    "comments": [],
+    "id": 26,
+    "entry": "This is an example post with a random gif linked to what i search below",
+    "comments": [
+      "dg"
+    ],
     "reactions": {
       "smiley": 0,
       "sad": 0,
       "like": 0
     },
-    "gif": ""
-  },
-  {
-    "id": 28,
-    "entry": "sdfs",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
-  },
-  {
-    "id": 29,
-    "entry": "ddd",
-    "comments": [],
-    "reactions": {
-      "smiley": 0,
-      "sad": 0,
-      "like": 0
-    },
-    "gif": ""
+    "gif": "https://media4.giphy.com/media/fegzospsGS6Os/giphy.gif?cid=9af07ad315mnlrmnmpvr96lv4agehgzc6o4sv9hcz6kyra7i&rid=giphy.gif&ct=g"
   }
 ]

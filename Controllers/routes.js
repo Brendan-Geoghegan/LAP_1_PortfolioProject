@@ -67,16 +67,14 @@ router.patch("/:id/gif", (req, res) => {
 router.delete("/:id/delete", (req,res) => {
     console.log("hitting the delete route");
     const id = parseInt(req.params.id);
-    // const entryToDelete = Entry.findById(id)[0]
-    // console.log(entryToDelete)
-    // entryToDelete.deleteEntry()
-    // if(!Entry.deleteEntry(id)){
-    //     return res.send("entry doesn't existed")
-    // } else {
-    //     res.status(200).send("Item deleted")
-    // }
-    Entry.deleteEntry(id);
-    res.status(404).send("entry deleted");
+    const entry = Entry.findById(parseInt(req.params.id));
+    if(!entry) {
+        res.status(404).send("item not found")
+    } else {
+        Entry.deleteEntry(id);
+        res.status(404).send("entry deleted");
+    }
+    
 })
 
 

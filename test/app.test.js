@@ -126,7 +126,7 @@ describe('API server', () => {
         gif: "test"
     };
 
-    it.only("responds to a patch /:id/gif with a status code of 200", (done) => {
+    it("responds to a patch /:id/gif with a status code of 200", (done) => {
         request(api)
             .patch("/entries/3/gif")
             .send(testGif)
@@ -147,7 +147,7 @@ describe('API server', () => {
     // delete route test
     it.only('responds to delete /:id/delete with status 404', async () => {
       console.log(entries);
-      await request(api).delete('/entries/3/delete').expect(404);
+      await request(api).delete('/entries/32/delete').expect(404);
       const newDbList = await request(api).get('/entries');
       console.log(newDbList.body)
       expect(newDbList.body.length).toBe(entries.length -1);
