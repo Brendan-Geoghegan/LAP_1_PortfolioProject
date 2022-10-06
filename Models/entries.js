@@ -28,7 +28,6 @@ class Entry {
           } catch (err) {
               console.log(err);
           }
-      
     }
 
     static findById(id) {

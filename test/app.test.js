@@ -115,13 +115,13 @@ describe("Delete Requests", () => {
         api.close(done); // TypeError: api.close is not a function
     })
 
-    it.skip("Returns 404 status on delete request to /entries/:id/delete route", async () => {
+    it("Returns 404 status on delete request to /entries/:id/delete route", async () => {
       await request(api).delete("/entries/3/delete").expect(404);
       const newDbList = await request(api).get("/entries");
       expect(newDbList.body.length).toBe(entries.length -1);
     })
 
-    it.skip("Returns 404 status on delete request to /entries/:id/delete route where :id does not exist", (done) => {
+    it("Returns 404 status on delete request to /entries/:id/delete route where :id does not exist", (done) => {
         request(api).delete("/-1/delete").expect(404);
       })
 
@@ -142,7 +142,7 @@ describe("Comment Patch Requests", () => {
         comment: "test"
     };
 
-    it.skip("responds to a patch /:id/comments with a status code of 200", (done) => {
+    it("responds to a patch /:id/comments with a status code of 200", (done) => {
         request(api)
             .patch("/2/comments")
             .send(testComment)
@@ -162,7 +162,7 @@ describe("Comment Patch Requests", () => {
             }, done)
     })
 
-    it.skip(" to a patch /entries/:id/comments with a status code of 200", (done) => {
+    it(" to a patch /entries/:id/comments with a status code of 200", (done) => {
         request(api)
             .patch("/entries/2/comments")
             .send(testComment)
@@ -204,7 +204,7 @@ describe("Reaction Patch Requests", () => {
         reaction: "smiley"
     };
 
-    it.skip("Returns 200 status on patch request to /:id/reaction route", (done) => {
+    it("Returns 200 status on patch request to /:id/reaction route", (done) => {
         request(api)
             .patch("/1/reaction")
             .send(testReaction)
@@ -246,7 +246,7 @@ describe("GIF Patch Requests", () => {
         gif: "test"
     };
 
-    it.skip("Returns 200 status to patch request to /:id/gif route", (done) => {
+    it("Returns 200 status to patch request to /:id/gif route", (done) => {
         request(api)
             .patch("/0/gif")
             .send(testGif)
