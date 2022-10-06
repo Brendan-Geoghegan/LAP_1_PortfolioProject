@@ -1,0 +1,41 @@
+[
+    {
+      "id": 0,
+      "entry": "Test entry 0",
+      "comments": [
+        null,
+        "sad"
+      ],
+      "reactions": {
+        "smiley": 1,
+        "sad": 2,
+        "like": 3
+      },
+      "gif": ""
+    },
+    {
+      "id": 1,
+      "entry": "Test entry 1",
+      "comments": [],
+      "reactions": {
+        "smiley": 1,
+        "sad": 1,
+        "like": 1
+      },
+      "gif": "gif"
+    },
+    {
+      "id": 2,
+      "entry": "Test entry 2",
+      "comments": [
+        "test"
+      ],
+      "reactions": {
+        "smiley": 3,
+        "sad": 3,
+        "like": 3
+      },
+      "gif": ""
+    }
+  ]
+  
