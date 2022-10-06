@@ -5,7 +5,7 @@ const filePath = "./data.json"
 
 const getEntryData = () => {
     const jsonData = fs.readFileSync(filePath, "utf-8")
-    return JSON.parse(jsonData)    
+    return JSON.parse(jsonData)
 }
 
 const entries = getEntryData()
@@ -47,24 +47,25 @@ describe("Get Requests", () => {
 
     it("Returns 200 status and the specified entry on get request to /entries/:id route", (done) => {
         request(api).get("/entries/0").expect(200)
-        .expect([{id: 0,
-        entry: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
-        comments: [
-            null,
-            "sad"
-        ],
-        reactions: {
-            smiley: 1202,
-            sad: 20,
-            like: 200
-        },
-        gif: ""
-      }], done)
+            .expect([{
+                id: 0,
+                entry: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
+                comments: [
+                    null,
+                    "sad"
+                ],
+                reactions: {
+                    smiley: 1202,
+                    sad: 20,
+                    like: 200
+                },
+                gif: ""
+            }], done)
     })
 
     it("Returns 404 status on get request to /entries/:id route where :id does not exist", (done) => {
         request(api).get("/entries/99").expect(404)
-        .expect(404, done)
+            .expect(404, done)
     })
 
 })
@@ -85,21 +86,21 @@ describe("Post Requests", () => {
             "entry": "test entry",
             "comments": ["new comment"],
             "reactions": {
-              "smiley": 2,
-              "sad": 20,
-              "like": 5
+                "smiley": 2,
+                "sad": 20,
+                "like": 5
             },
             "gif": "url"
-          }
+        }
         request(api).post("/entries")
-                    .send(testEntry)
-                    .set("Accept", /application\/json/)
-                    .expect(201).expect({ ...testEntry, id: entries[entries.length - 1].id + 1}, done)
+            .send(testEntry)
+            .set("Accept", /application\/json/)
+            .expect(201).expect({ ...testEntry, id: entries[entries.length - 1].id + 1 }, done)
     })
 
     it("Returns 404 status on get request to /entries/:id route where :id does not exist", (done) => {
         request(api).get("/entries/99").expect(404)
-        .expect(404, done)
+            .expect(404, done)
     })
 
 })
@@ -115,15 +116,15 @@ describe("Delete Requests", () => {
         api.close(done); // TypeError: api.close is not a function
     })
 
-    it.skip("Returns 404 status on delete request to /entries/:id/delete route", async () => {
-      await request(api).delete("/entries/3/delete").expect(404);
-      const newDbList = await request(api).get("/entries");
-      expect(newDbList.body.length).toBe(entries.length -1);
+    it("Returns 404 status on delete request to /entries/:id/delete route", async () => {
+        await request(api).delete("/entries/1/delete").expect(404);
+        const newDbList = await request(api).get("/entries");
+        expect(newDbList.body.length).toBe(entries.length - 1);
     })
 
-    it.skip("Returns 404 status on delete request to /entries/:id/delete route where :id does not exist", (done) => {
+    it("Returns 404 status on delete request to /entries/:id/delete route where :id does not exist", async () => {
         request(api).delete("/-1/delete").expect(404);
-      })
+    })
 
 })
 
@@ -142,7 +143,7 @@ describe("Comment Patch Requests", () => {
         comment: "test"
     };
 
-    it.skip("responds to a patch /:id/comments with a status code of 200", (done) => {
+    it("responds to a patch /:id/comments with a status code of 200", (done) => {
         request(api)
             .patch("/2/comments")
             .send(testComment)
@@ -162,7 +163,7 @@ describe("Comment Patch Requests", () => {
             }, done)
     })
 
-    it.skip(" to a patch /entries/:id/comments with a status code of 200", (done) => {
+    it(" to a patch /entries/:id/comments with a status code of 200", (done) => {
         request(api)
             .patch("/entries/2/comments")
             .send(testComment)
@@ -184,7 +185,7 @@ describe("Comment Patch Requests", () => {
 
     it("Returns 404 status on get request to /entries/:id/comments route where :id does not exist", (done) => {
         request(api).get("/-1/comments").expect(404)
-        .expect(404, done)
+            .expect(404, done)
     })
 
 })
@@ -204,7 +205,7 @@ describe("Reaction Patch Requests", () => {
         reaction: "smiley"
     };
 
-    it.skip("Returns 200 status on patch request to /:id/reaction route", (done) => {
+    it("Returns 200 status on patch request to /:id/reaction route", (done) => {
         request(api)
             .patch("/1/reaction")
             .send(testReaction)
@@ -246,7 +247,7 @@ describe("GIF Patch Requests", () => {
         gif: "test"
     };
 
-    it.skip("Returns 200 status to patch request to /:id/gif route", (done) => {
+    it("Returns 200 status to patch request to /:id/gif route", (done) => {
         request(api)
             .patch("/0/gif")
             .send(testGif)
@@ -266,7 +267,7 @@ describe("GIF Patch Requests", () => {
 
     it("Returns 404 status on get request to /:id/gif route where :id does not exist", (done) => {
         request(api).get("/-1/gif").expect(404)
-        .expect(404, done)
+            .expect(404, done)
     })
 
 })

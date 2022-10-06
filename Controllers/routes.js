@@ -27,13 +27,17 @@ router.post('/', (req, res) => {
 router.patch('/:id/comments', (req,res) => {
     const newComment = req.body.comment
     const entryId = parseInt(req.params.id)
-    const updatedEntry = Entry.addAcomment(entryId, newComment)
-    res.status(201).send(updatedEntry)
+    if(!entryId) {
+        res.status(404).send("item not found")
+    } else {
+        const updatedEntry = Entry.addAcomment(entryId, newComment)
+        res.status(201).send(updatedEntry)
+    }
 })
 
 router.patch("/:id/reaction", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id));
-    const data =req.body;
+    const data = req.body;
     if(!data) {
         res.send("Data not received from client.")
     } else if (!entry) {
@@ -49,7 +53,7 @@ router.patch("/:id/reaction", (req, res) => {
 router.patch("/:id/gif", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id));
     if(!entry) {
-        res.send("item not found")
+        res.status(404).send("item not found")
     } else {
         const data =req.body;
         const id = parseInt(req.params.id);
@@ -58,23 +62,30 @@ router.patch("/:id/gif", (req, res) => {
         res.status(200).send(updatedEntry);
     }
 })
-router.delete("/:id/delete", (req,res) => {
-    console.log("hitting the delete route");
-    const id = parseInt(req.params.id);
-    Entry.deleteEntry(id);
-    res.status(404).send("entry deleted");
-})
 
+router.delete("/:id/delete", (req,res) => {
+    const id = parseInt(req.params.id);
+    const entry = Entry.findById(parseInt(req.params.id));
+    if(!entry) {
+        res.status(404).send("item not found")
+    } else {
+        Entry.deleteEntry(id);
+        res.status(404).send("entry deleted");
+    }
+})
 
 router.get("/:id/comments", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id))[0]
-    res.send(entry.comments)
+    if(!entry) {
+        res.status(404).send("item not found")
+    } else {
+        res.send(entry.comments)
+    }
 })
 
 router.get("/count/:id/:reaction", (req, res) => {
     const entry = Entry.findById(parseInt(req.params.id));
     const reaction = req.params.reaction;
-
     if(!reaction) {
         res.status(404).send("reaction not found")
     } else if (!entry) {

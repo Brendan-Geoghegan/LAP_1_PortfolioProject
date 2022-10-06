@@ -4,28 +4,12 @@
     "entry": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatibus fuga harum quibusdam, culpa dolorem odio id omnis excepturi. Aspernatur eligendi, unde facere impedit iusto possimus tempora placeat doloremque dolores.",
     "comments": [
       null,
-      "sad",
-      "",
-      "sfjadsjfgadsjfkdsfa",
-      "hjgjkghjgk",
-      "asfsd",
-      "hello",
-      "hello again",
-      "hello again",
-      "helloooo",
-      "hi",
-      "hii",
-      "test",
-      "test 2",
-      "test3",
-      "test3",
-      "test4",
-      "hjfh"
+      "sad"
     ],
     "reactions": {
-      "smiley": 1214,
-      "sad": 21,
-      "like": 201
+      "smiley": 1202,
+      "sad": 20,
+      "like": 200
     },
     "gif": ""
   },
@@ -36,7 +20,7 @@
       "new comment"
     ],
     "reactions": {
-      "smiley": 13,
+      "smiley": 15,
       "sad": 20,
       "like": 5
     },
@@ -811,110 +795,6 @@
   },
   {
     "id": 67,
-    "entry": "test entry",
-    "comments": [
-      "new comment"
-    ],
-    "reactions": {
-      "smiley": 2,
-      "sad": 20,
-      "like": 5
-    },
-    "gif": "url"
-  },
-  {
-    "id": 68,
-    "entry": "test entry",
-    "comments": [
-      "new comment"
-    ],
-    "reactions": {
-      "smiley": 2,
-      "sad": 20,
-      "like": 5
-    },
-    "gif": "url"
-  },
-  {
-    "id": 69,
-    "entry": "test entry",
-    "comments": [
-      "new comment"
-    ],
-    "reactions": {
-      "smiley": 2,
-      "sad": 20,
-      "like": 5
-    },
-    "gif": "url"
-  },
-  {
-    "id": 70,
-    "entry": "test entry",
-    "comments": [
-      "new comment"
-    ],
-    "reactions": {
-      "smiley": 2,
-      "sad": 20,
-      "like": 5
-    },
-    "gif": "url"
-  },
-  {
-    "id": 71,
-    "entry": "test entry",
-    "comments": [
-      "new comment"
-    ],
-    "reactions": {
-      "smiley": 2,
-      "sad": 20,
-      "like": 5
-    },
-    "gif": "url"
-  },
-  {
-    "id": 72,
-    "entry": "test entry",
-    "comments": [
-      "new comment"
-    ],
-    "reactions": {
-      "smiley": 2,
-      "sad": 20,
-      "like": 5
-    },
-    "gif": "url"
-  },
-  {
-    "id": 73,
-    "entry": "test entry",
-    "comments": [
-      "new comment"
-    ],
-    "reactions": {
-      "smiley": 2,
-      "sad": 20,
-      "like": 5
-    },
-    "gif": "url"
-  },
-  {
-    "id": 74,
-    "entry": "test entry",
-    "comments": [
-      "new comment"
-    ],
-    "reactions": {
-      "smiley": 2,
-      "sad": 20,
-      "like": 5
-    },
-    "gif": "url"
-  },
-  {
-    "id": 75,
     "entry": "test entry",
     "comments": [
       "new comment"
