@@ -15,8 +15,12 @@ Project for LAP1 by Team Name 404 - serverside repo
 - HTML
 - CSS
 - Node:
-    - jest
-    - supertest
+    - Jest
+    - Supertest
+    - Nodemon
+    - Express
+    - Cors
+    - Dotenv
 - Heroku
 - Netlify
 ## Process
