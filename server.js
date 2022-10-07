@@ -3,7 +3,7 @@ const app = express();
 const cors =  require("cors");
 app.use(cors());
 
-const router = require('./controllers/routes.js')
+const router = require('./Controllers/routes.js')
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
